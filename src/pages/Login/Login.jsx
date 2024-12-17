@@ -45,7 +45,7 @@ const Login = () => {
 
     if (data && data.user) {
       setUser(data.user);
-      navigate("/dashboard");
+      navigate("/classLink/dashboard");
     }
   }, [data, error]);
 

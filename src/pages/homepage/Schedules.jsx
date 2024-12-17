@@ -22,7 +22,7 @@ const Schedules = () => {
     <div className="schedules card">
       <div className="flex-r mb-2 p-2">
         <h3 className="mb-0">Assignments</h3>
-        <Link to={"/timetable_assignments"}>View All</Link>
+        <Link to={"/classLink/timetable_assignments"}>View All</Link>
       </div>
       <ul
         className="list-group"

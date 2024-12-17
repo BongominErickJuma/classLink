@@ -169,7 +169,7 @@ const ExamTable = () => {
                 <i className="bi bi-patch-question"></i> Create Courses in order
                 to add Timetable
               </p>
-              <Link to={"/courses"} className="btn btn-sm view-btn">
+              <Link to={"/classLink/courses"} className="btn btn-sm view-btn">
                 Create Courses
               </Link>
             </>

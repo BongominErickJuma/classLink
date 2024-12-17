@@ -223,7 +223,7 @@ const Courses = () => {
         <div className="row">
           {courses.map((course) => (
             <div key={course.unit_code} className="col-md-4 mb-4">
-              <Link to={`/courses/${course.unit_code}`}>
+              <Link to={`/classLink/courses/${course.unit_code}`}>
                 <div className="card h-100">
                   <div className="card-body">
                     <h5 className="card-title">{course.course_title}</h5>
@@ -253,7 +253,7 @@ const Courses = () => {
                 <i className="bi bi-patch-question"></i> Create Teachers in
                 order to add Courses
               </p>
-              <Link to={"/teachers"} className="btn btn-sm view-btn">
+              <Link to={"/classLink/teachers"} className="btn btn-sm view-btn">
                 Create Teachers
               </Link>
             </>

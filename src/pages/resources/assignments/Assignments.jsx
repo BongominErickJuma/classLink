@@ -33,7 +33,7 @@ const Assignments = () => {
         <div className="row">
           {courses.map((course) => (
             <div key={course.unit_code} className="col-md-4 mb-4">
-              <Link to={`/assignments/${course.unit_code}`}>
+              <Link to={`/classLink/assignments/${course.unit_code}`}>
                 <div className="card h-100">
                   <div className="card-body">
                     <h5 className="card-title">{course.course_title}</h5>

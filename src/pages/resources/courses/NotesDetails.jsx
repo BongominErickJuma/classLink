@@ -105,7 +105,7 @@ const NotesDetails = () => {
             )}
             <div className="col-lg-3">
               <Link
-                to={`/courses/${unitCode}`}
+                to={`/classLink/courses/${unitCode}`}
                 className="btn btn-sm btn-outline-primary view-btn w-100"
               >
                 Back

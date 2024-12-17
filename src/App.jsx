@@ -28,25 +28,25 @@ import Attendance from "./pages/statistics/attendance/Attendance";
 
 // Define your valid paths
 const validPaths = [
-  "/dashboard",
-  "/todayschedule",
-  "/timetable",
-  "/students",
-  "/teachers",
-  "/timetable_exams",
-  "/timetable_assignments",
-  "/courses",
-  "/courses/:unitCode",
-  "/notes/:unitCode/:id",
-  "/assignments",
-  "/assignments/:unitCode",
-  "/answers",
-  "/answers/:unitCode",
-  "/meetings",
-  "/profile",
-  "/performance",
-  "/course_progress",
-  "/attendance",
+  "/classLink/dashboard",
+  "/classLink/todayschedule",
+  "/classLink/timetable",
+  "/classLink/students",
+  "/classLink/teachers",
+  "/classLink/timetable_exams",
+  "/classLink/timetable_assignments",
+  "/classLink/courses",
+  "/classLink/courses/:unitCode",
+  "/classLink/notes/:unitCode/:id",
+  "/classLink/assignments",
+  "/classLink/assignments/:unitCode",
+  "/classLink/answers",
+  "/classLink/answers/:unitCode",
+  "/classLink/meetings",
+  "/classLink/profile",
+  "/classLink/performance",
+  "/classLink/course_progress",
+  "/classLink/attendance",
 ];
 
 // Function to check if the current path is valid, including dynamic segments
@@ -89,11 +89,11 @@ const App = () => {
       <div className="min-vh-100 main" id={`${showHeaderAndSidebar && "main"}`}>
         <Routes>
           {/* Public route */}
-          <Route exact path="/" element={<Login />} />
+          <Route exact path="/classLink" element={<Login />} />
 
           {/* Protected routes */}
           <Route
-            path="/dashboard"
+            path="/classLink/dashboard"
             element={
               <ProtectedRoute>
                 <Homepage />
@@ -101,7 +101,7 @@ const App = () => {
             }
           />
           <Route
-            path="/todayschedule"
+            path="/classLink/todayschedule"
             element={
               <ProtectedRoute>
                 <TodaySchedule />
@@ -109,7 +109,7 @@ const App = () => {
             }
           />
           <Route
-            path="/timetable"
+            path="/classLink/timetable"
             element={
               <ProtectedRoute>
                 <Timetable />
@@ -117,7 +117,7 @@ const App = () => {
             }
           />
           <Route
-            path="/students"
+            path="/classLink/students"
             element={
               <ProtectedRoute>
                 <Students />
@@ -125,7 +125,7 @@ const App = () => {
             }
           />
           <Route
-            path="/teachers"
+            path="/classLink/teachers"
             element={
               <ProtectedRoute>
                 <Teachers />
@@ -133,7 +133,7 @@ const App = () => {
             }
           />
           <Route
-            path="/timetable_exams"
+            path="/classLink/timetable_exams"
             element={
               <ProtectedRoute>
                 <ExamsTable />
@@ -141,7 +141,7 @@ const App = () => {
             }
           />
           <Route
-            path="/timetable_assignments"
+            path="/classLink/timetable_assignments"
             element={
               <ProtectedRoute>
                 <AssignmentsTable />
@@ -149,7 +149,7 @@ const App = () => {
             }
           />
           <Route
-            path="/courses"
+            path="/classLink/courses"
             element={
               <ProtectedRoute>
                 <Courses />
@@ -157,7 +157,7 @@ const App = () => {
             }
           />
           <Route
-            path="/courses/:unitCode"
+            path="/classLink/courses/:unitCode"
             element={
               <ProtectedRoute>
                 <CourseDetails />
@@ -165,7 +165,7 @@ const App = () => {
             }
           />
           <Route
-            path="/notes/:unitCode/:id"
+            path="/classLink/notes/:unitCode/:id"
             element={
               <ProtectedRoute>
                 <NotesDetails />
@@ -173,7 +173,7 @@ const App = () => {
             }
           />
           <Route
-            path="/assignments"
+            path="/classLink/assignments"
             element={
               <ProtectedRoute>
                 <Assignments />
@@ -181,7 +181,7 @@ const App = () => {
             }
           />
           <Route
-            path="/assignments/:unitCode"
+            path="/classLink/assignments/:unitCode"
             element={
               <ProtectedRoute>
                 <AssignmentDetail />
@@ -189,7 +189,7 @@ const App = () => {
             }
           />
           <Route
-            path="/answers"
+            path="/classLink/answers"
             element={
               <ProtectedRoute>
                 <Answers />
@@ -197,7 +197,7 @@ const App = () => {
             }
           />
           <Route
-            path="/answers/:unitCode"
+            path="/classLink/answers/:unitCode"
             element={
               <ProtectedRoute>
                 <AnswerDetails />
@@ -205,7 +205,7 @@ const App = () => {
             }
           />
           <Route
-            path="/meetings"
+            path="/classLink/meetings"
             element={
               <ProtectedRoute>
                 <Meetings />
@@ -213,7 +213,7 @@ const App = () => {
             }
           />
           <Route
-            path="/profile"
+            path="/classLink/profile"
             element={
               <ProtectedRoute>
                 <Profile />
@@ -221,7 +221,7 @@ const App = () => {
             }
           />
           <Route
-            path="/performance"
+            path="/classLink/performance"
             element={
               <ProtectedRoute>
                 <Performance />
@@ -229,7 +229,7 @@ const App = () => {
             }
           />
           <Route
-            path="/course_progress"
+            path="/classLink/course_progress"
             element={
               <ProtectedRoute>
                 <Cprogress />
@@ -237,7 +237,7 @@ const App = () => {
             }
           />
           <Route
-            path="/attendance"
+            path="/classLink/attendance"
             element={
               <ProtectedRoute>
                 <Attendance />

@@ -32,7 +32,7 @@ const Answers = () => {
         <div className="row">
           {courses.map((course, idx) => (
             <div key={idx} className="col-md-4 mb-4">
-              <Link to={`/answers/${course.unit_code}`}>
+              <Link to={`/classLink/answers/${course.unit_code}`}>
                 <div className="card h-100">
                   <div className="card-body">
                     <h5 className="card-title">{course.course_title}</h5>

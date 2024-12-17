@@ -44,7 +44,7 @@ const Profile = () => {
       <li>
         <Link
           className="dropdown-item d-flex align-items-center"
-          to={"/profile"}
+          to={"/classLink/profile"}
         >
           <i className="bi bi-person"></i>
           <span>My Profile</span>

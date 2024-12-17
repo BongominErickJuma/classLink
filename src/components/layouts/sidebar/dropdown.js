@@ -1,7 +1,7 @@
 const dropdown = [
   {
     label: "Dashboard",
-    linkTo: "/dashboard",
+    linkTo: "/classLink/dashboard",
     icon: "bi bi-house-door",
   },
   {
@@ -10,8 +10,16 @@ const dropdown = [
     icon: "bi bi-journals",
     chevron: "bi bi-chevron-down",
     children: [
-      { label: "Today", linkTo: "/todayschedule", icon: "bi bi-calendar-day" },
-      { label: "Time Table", linkTo: "/timetable", icon: "bi bi-table" },
+      {
+        label: "Today",
+        linkTo: "/classLink/todayschedule",
+        icon: "bi bi-calendar-day",
+      },
+      {
+        label: "Time Table",
+        linkTo: "/classLink/timetable",
+        icon: "bi bi-table",
+      },
     ],
   },
   {
@@ -20,15 +28,19 @@ const dropdown = [
     icon: "bi bi-bar-chart-line",
     chevron: "bi bi-chevron-down",
     children: [
-      { label: "Performance", linkTo: "/performance", icon: "bi bi-graph-up" },
+      {
+        label: "Performance",
+        linkTo: "/classLink/performance",
+        icon: "bi bi-graph-up",
+      },
       {
         label: "Courses",
-        linkTo: "/course_progress",
+        linkTo: "/classLink/course_progress",
         icon: "bi bi-flag",
       },
       {
         label: "Attendance",
-        linkTo: "/attendance",
+        linkTo: "/classLink/attendance",
         icon: "bi bi-check2-circle",
       },
     ],
@@ -39,13 +51,17 @@ const dropdown = [
     icon: "bi bi-box",
     chevron: "bi bi-chevron-down",
     children: [
-      { label: "Subjects", linkTo: "/courses", icon: "bi bi-book" },
+      { label: "Subjects", linkTo: "/classLink/courses", icon: "bi bi-book" },
       {
         label: "Assignments",
-        linkTo: "/assignments",
+        linkTo: "/classLink/assignments",
         icon: "bi bi-pencil-square",
       },
-      { label: "Answers", linkTo: "/answers", icon: "bi bi-check-square" },
+      {
+        label: "Answers",
+        linkTo: "/classLink/answers",
+        icon: "bi bi-check-square",
+      },
     ],
   },
   {
@@ -54,8 +70,16 @@ const dropdown = [
     icon: "bi bi-people",
     chevron: "bi bi-chevron-down",
     children: [
-      { label: "Students", linkTo: "/students", icon: "bi bi-person" },
-      { label: "Teachers", linkTo: "/teachers", icon: "bi bi-person-badge" },
+      {
+        label: "Students",
+        linkTo: "/classLink/students",
+        icon: "bi bi-person",
+      },
+      {
+        label: "Teachers",
+        linkTo: "/classLink/teachers",
+        icon: "bi bi-person-badge",
+      },
     ],
   },
   {
@@ -66,17 +90,17 @@ const dropdown = [
     children: [
       {
         label: "Assignments",
-        linkTo: "/timetable_assignments",
+        linkTo: "/classLink/timetable_assignments",
         icon: "bi bi-clipboard-check",
       },
       {
         label: "Exams",
-        linkTo: "/timetable_exams",
+        linkTo: "/classLink/timetable_exams",
         icon: "bi bi-journal-check",
       },
       {
         label: "Meetings",
-        linkTo: "/meetings",
+        linkTo: "/classLink/meetings",
         icon: "bi bi-chat-dots",
       },
     ],
