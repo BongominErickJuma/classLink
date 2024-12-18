@@ -1,47 +1,31 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
 import { UserContext } from "../../contexts/UserContext";
 
 const Login = () => {
   const navigate = useNavigate();
   const { setUser } = useContext(UserContext);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [data, setData] = useState(null);
+  const [submitData, setSubmitData] = useState(false); // Used for controlling fetch
   const [login, setLogin] = useState({
     name: "",
     password: "",
   });
 
-  const handleSignIn = async (e) => {
+  // Controlled fetch with shouldFetch flag
+  const { data, error, loading } = useFetch(
+    submitData ? import.meta.env.VITE_LOGIN : null,
+    {
+      method: "POST",
+      body: JSON.stringify(login),
+      headers: { "Content-Type": "application/json" },
+    },
+    submitData // Only fetch when submitData is true
+  );
+
+  const handleSignIn = (e) => {
     e.preventDefault();
-    setLoading(true);
-    setError(null);
-    setData(null);
-
-    try {
-      const response = await fetch(import.meta.env.VITE_LOGIN, {
-        method: "POST",
-        body: JSON.stringify(login),
-        headers: { "Content-Type": "application/json" },
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.message || "Failed to login");
-      }
-
-      setData(result);
-      if (result.user) {
-        setUser(result.user);
-        navigate("/classLink/dashboard");
-      }
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
+    setSubmitData(true); // Trigger fetch on form submit
   };
 
   const handleInputChange = (e) => {
@@ -53,7 +37,17 @@ const Login = () => {
 
   useEffect(() => {
     document.title = "Class Link | Login";
-  }, []);
+
+    // Reset submitData after response
+    if (data || error) {
+      setSubmitData(false); // Prevent refetching on input change
+    }
+
+    if (data && data.user) {
+      setUser(data.user);
+      navigate("/classLink/dashboard");
+    }
+  }, [data, error]);
 
   return (
     <div className="min-vh-100 main flex-c">
@@ -70,7 +64,7 @@ const Login = () => {
 
       {!error && !loading && data && (
         <div>
-          <p className="text-danger">{data.message}</p>
+          <p className="text-danger">{data && data.message}</p>
         </div>
       )}
 
