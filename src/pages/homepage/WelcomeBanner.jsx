@@ -8,7 +8,8 @@ const WelcomeBanner = ({ currentUser, users, courses, activeUsers }) => {
 
   return (
     <div className="welcome-banner mb-3">
-      <h1>Welcome, {currentUser?.name}!</h1>
+      <h1>Welcome, {currentUser?.name || "Guest"}!</h1>
+
       <p>Here’s a quick overview:</p>
       <div className="row g-3">
         <div className="col-lg-4">
@@ -18,7 +19,7 @@ const WelcomeBanner = ({ currentUser, users, courses, activeUsers }) => {
               Total Users:{" "}
               <span
                 data-purecounter-start="0"
-                data-purecounter-end={users}
+                data-purecounter-end={Number(users) || 0}
                 data-purecounter-duration="1"
                 className="purecounter"
               ></span>
@@ -32,7 +33,7 @@ const WelcomeBanner = ({ currentUser, users, courses, activeUsers }) => {
               Active Users:{" "}
               <span
                 data-purecounter-start="0"
-                data-purecounter-end={activeUsers}
+                data-purecounter-end={Number(activeUsers)}
                 data-purecounter-duration="1"
                 className="purecounter"
               ></span>
@@ -46,7 +47,7 @@ const WelcomeBanner = ({ currentUser, users, courses, activeUsers }) => {
               Active Courses:{" "}
               <span
                 data-purecounter-start="0"
-                data-purecounter-end={courses}
+                data-purecounter-end={Number(courses)}
                 data-purecounter-duration="1"
                 className="purecounter"
               ></span>
