@@ -23,7 +23,7 @@ const Profile = () => {
         localStorage.removeItem("user");
 
         // Navigate after successful logout
-        navigate("/");
+        navigate("/classLink");
       } else {
         console.error("Failed to log out.");
       }
