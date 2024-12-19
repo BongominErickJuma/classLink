@@ -18,7 +18,6 @@ import "./index.css";
 // Main JSX
 
 import App from "./App.jsx";
-import { BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./contexts/UserContext.jsx";
 
 // Charts
@@ -26,9 +25,7 @@ import { UserProvider } from "./contexts/UserContext.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <UserProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <App />
     </UserProvider>
   </React.StrictMode>
 );
