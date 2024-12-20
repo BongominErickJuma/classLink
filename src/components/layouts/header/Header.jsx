@@ -41,7 +41,7 @@ const Header = (props) => {
                 <span className="badge bg-primary badge-number">4</span>{" "}
               </a>
 
-              <Notifications />
+              {/* <Notifications /> */}
             </li>
 
             <li className="nav-item dropdown pe-3">

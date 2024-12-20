@@ -1,4 +1,4 @@
-const notifications = [
+const platformNotifications = [
   {
     id: 1,
     title: "New message received",
@@ -33,4 +33,4 @@ const notifications = [
   },
 ];
 
-export default notifications;
+export default platformNotifications;

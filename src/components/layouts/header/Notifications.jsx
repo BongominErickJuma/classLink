@@ -1,5 +1,5 @@
 import React from "react";
-import notifications from "./notifications.js";
+import platformNotifications from "./platformNotifications.js";
 
 const Notifications = () => {
   const timeAgo = (date) => {
@@ -19,7 +19,7 @@ const Notifications = () => {
   return (
     <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
       <li className="dropdown-header">
-        You have {notifications.length} new notifications
+        You have {platformNotifications.length} new notifications
         <a href="#">
           <span className="badge rounded-pill bg-primary p-2 ms-2">
             View all
@@ -29,7 +29,7 @@ const Notifications = () => {
       <li>
         <hr className="dropdown-divider" />
       </li>
-      {notifications.map((notification) => (
+      {platformNotifications.map((notification) => (
         <React.Fragment key={notification.id}>
           <li className="notification-item">
             <i
