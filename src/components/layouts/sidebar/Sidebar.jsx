@@ -1,7 +1,7 @@
 import React from "react";
 import "./sidebar.css";
 import SidebarDropdowns from "./SidebarDropdowns";
-import dropdown from "./dropdown";
+import dropdown from "./dropdown.js";
 
 const Sidebar = () => {
   return (

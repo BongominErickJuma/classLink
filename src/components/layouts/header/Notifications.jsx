@@ -1,22 +1,21 @@
 import React from "react";
-import notifications from "./notifications";
-
-const timeAgo = (date) => {
-  const now = new Date();
-  const diff = Math.floor((now - date) / 1000);
-
-  if (diff < 60) {
-    return `${diff} sec. ago`;
-  } else if (diff < 3600) {
-    return `${Math.floor(diff / 60)} min. ago`;
-  } else if (diff < 86400) {
-    return `${Math.floor(diff / 3600)} hr. ago`;
-  } else {
-    return `${Math.floor(diff / 86400)} day(s) ago`;
-  }
-};
+import notifications from "./notifications.js";
 
 const Notifications = () => {
+  const timeAgo = (date) => {
+    const now = new Date();
+    const diff = Math.floor((now - date) / 1000);
+
+    if (diff < 60) {
+      return `${diff} sec. ago`;
+    } else if (diff < 3600) {
+      return `${Math.floor(diff / 60)} min. ago`;
+    } else if (diff < 86400) {
+      return `${Math.floor(diff / 3600)} hr. ago`;
+    } else {
+      return `${Math.floor(diff / 86400)} day(s) ago`;
+    }
+  };
   return (
     <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
       <li className="dropdown-header">

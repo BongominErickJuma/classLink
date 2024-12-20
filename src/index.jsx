@@ -23,9 +23,7 @@ import { UserProvider } from "./contexts/UserContext.jsx";
 // Charts
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <UserProvider>
-      <App />
-    </UserProvider>
-  </React.StrictMode>
+  <UserProvider>
+    <App />
+  </UserProvider>
 );
