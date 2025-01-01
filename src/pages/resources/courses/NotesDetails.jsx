@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../../../contexts/UserContext";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 
 const NotesDetails = () => {
+  const navigate = useNavigate();
   const { user } = useContext(UserContext);
   const userRole = user?.role;
   const { unitCode, id } = useParams();
@@ -37,8 +38,6 @@ const NotesDetails = () => {
           headers: { "Content-Type": "application/json" },
         },
       });
-
-      window.location.reload();
     }
   };
 
@@ -51,7 +50,9 @@ const NotesDetails = () => {
       },
     });
 
-    window.location.reload();
+    setTimeout(() => {
+      navigate(`/classLink/courses/${unitCode}`);
+    }, 1000);
   };
   useEffect(() => {
     document.title = "Class Link | Notes";

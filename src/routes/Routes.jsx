@@ -1,4 +1,3 @@
-import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HeaderSidebar from "../components/layouts/HeaderSidebar";
 import Homepage from "../pages/homepage/Homepage";

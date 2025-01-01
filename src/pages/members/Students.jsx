@@ -45,7 +45,7 @@ const Students = () => {
     setAddingStudent(null);
   };
 
-  const handleAddStudent = (e) => {
+  const handleAddStudent = async (e) => {
     e.preventDefault();
     setFetchUrl({
       url: `${import.meta.env.VITE_ADD_STUDENT}`,
@@ -55,7 +55,6 @@ const Students = () => {
         headers: { "Content-Type": "application/json" },
       },
     });
-    window.location.reload();
     closeModal();
   };
 
@@ -70,7 +69,6 @@ const Students = () => {
         headers: { "Content-Type": "application/json" },
       },
     });
-    window.location.reload();
     closeModal();
   };
 
@@ -81,7 +79,6 @@ const Students = () => {
         method: "DELETE",
       },
     });
-    window.location.reload();
     closeModal();
   };
 

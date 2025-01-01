@@ -59,7 +59,7 @@ const ExamTable = () => {
         headers: { "Content-Type": "application/json" },
       },
     });
-    window.location.reload();
+
     closeModal();
   };
 
@@ -79,7 +79,7 @@ const ExamTable = () => {
         headers: { "Content-Type": "application/json" },
       },
     });
-    window.location.reload();
+
     closeModal();
   };
 
@@ -90,7 +90,7 @@ const ExamTable = () => {
         method: "DELETE",
       },
     });
-    window.location.reload();
+
     closeModal();
   };
 

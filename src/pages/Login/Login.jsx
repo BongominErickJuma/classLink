@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 
@@ -61,7 +61,6 @@ const Login = () => {
         Class<span className="designed">Link.</span>
       </h2>
       <p>Please Login</p>
-      {loading && <small>Login process may delay please wait.</small>}
       {error && (
         <div className="text-danger">
           <p>{error}</p>
@@ -76,7 +75,7 @@ const Login = () => {
 
       <form onSubmit={handleSignIn} className="w-25">
         <div className="form-group">
-          <label>Name [Platform Admin]</label>
+          <label>Name</label>
           <input
             type="text"
             name="name"
@@ -88,7 +87,7 @@ const Login = () => {
           />
         </div>
         <div className="form-group">
-          <label>Password [admin]</label>
+          <label>Password</label>
           <input
             type="password"
             name="password"

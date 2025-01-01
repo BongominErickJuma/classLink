@@ -43,8 +43,6 @@ const Courses = () => {
         headers: { "Content-Type": "application/json" },
       },
     });
-
-    window.location.reload();
   };
 
   useEffect(() => {
@@ -205,6 +203,8 @@ const Courses = () => {
                 <button
                   type="submit"
                   className="btn btn-sm btn-info w-100 text-white"
+                  data-bs-toggle="collapse"
+                  href={`#addSubject`}
                 >
                   Add Subject
                 </button>

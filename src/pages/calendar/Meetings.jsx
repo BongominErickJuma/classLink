@@ -59,7 +59,7 @@ const Meetings = () => {
         headers: { "Content-Type": "application/json" },
       },
     });
-    window.location.reload();
+
     closeModal();
   };
 
@@ -79,7 +79,7 @@ const Meetings = () => {
         headers: { "Content-Type": "application/json" },
       },
     });
-    window.location.reload();
+
     closeModal();
   };
 
@@ -90,7 +90,7 @@ const Meetings = () => {
         method: "DELETE",
       },
     });
-    window.location.reload();
+
     closeModal();
   };
 

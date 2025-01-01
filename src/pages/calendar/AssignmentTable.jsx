@@ -55,7 +55,7 @@ const AssignmentTable = () => {
         headers: { "Content-Type": "application/json" },
       },
     });
-    window.location.reload();
+
     closeModal();
   };
 
@@ -70,7 +70,7 @@ const AssignmentTable = () => {
         headers: { "Content-Type": "application/json" },
       },
     });
-    window.location.reload();
+
     closeModal();
   };
 
@@ -82,7 +82,7 @@ const AssignmentTable = () => {
         method: "DELETE",
       },
     });
-    window.location.reload();
+
     closeModal();
   };
 

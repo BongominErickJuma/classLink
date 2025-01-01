@@ -51,7 +51,7 @@ const Header = (props) => {
                 data-bs-toggle="dropdown"
               >
                 <img
-                  src={user?.image || ""}
+                  src={user?.image}
                   alt="Profile"
                   className="rounded-circle"
                 />

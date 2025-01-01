@@ -1,5 +1,4 @@
 import Footer from "./components/layouts/footer/Footer";
-import React from "react";
 
 import Routes from "./routes/Routes";
 

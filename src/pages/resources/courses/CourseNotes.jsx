@@ -36,7 +36,10 @@ const CourseNotes = () => {
         {notes &&
           notes.map((note) => (
             <div key={note.chapter} className="col-md-4 mb-4">
-              <Link to={`/notes/${unitCode}/${note.chapter}`} state={note}>
+              <Link
+                to={`/classLink/notes/${unitCode}/${note.chapter}`}
+                state={note}
+              >
                 <div className="card h-100">
                   <div className="card-body">
                     <h5 className="card-title">Chapter {note.chapter}</h5>

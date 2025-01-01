@@ -57,7 +57,7 @@ const Teachers = () => {
         headers: { "Content-Type": "application/json" },
       },
     });
-    window.location.reload();
+
     closeModal();
   };
 
@@ -71,7 +71,7 @@ const Teachers = () => {
         headers: { "Content-Type": "application/json" },
       },
     });
-    window.location.reload();
+
     closeModal();
   };
 
@@ -82,7 +82,7 @@ const Teachers = () => {
         method: "DELETE",
       },
     });
-    window.location.reload();
+
     closeModal();
   };
 

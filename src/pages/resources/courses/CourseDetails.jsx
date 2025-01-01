@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../../../contexts/UserContext";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 import CourseNotes from "./CourseNotes";
 
 const CourseDetails = () => {
+  const navigate = useNavigate();
   const { user } = useContext(UserContext);
   const userRole = user?.role;
   const { unitCode } = useParams();
@@ -39,8 +40,6 @@ const CourseDetails = () => {
         headers: { "Content-Type": "application/json" },
       },
     });
-
-    window.location.reload();
   };
 
   const handleEditChange = (e) => {
@@ -61,8 +60,6 @@ const CourseDetails = () => {
           headers: { "Content-Type": "application/json" },
         },
       });
-
-      window.location.reload();
     }
   };
 
@@ -74,9 +71,11 @@ const CourseDetails = () => {
         method: "DELETE",
       },
     });
-
-    window.location.reload();
+    setTimeout(() => {
+      navigate("/classLink/courses");
+    }, 1000);
   };
+
   useEffect(() => {
     document.title = "Class Link | Course";
     if (data) {
@@ -88,7 +87,7 @@ const CourseDetails = () => {
       setTeacher(data.teacher);
       setTeachers(data.teachers);
     }
-  }, [data]);
+  }, [data, addNote]);
 
   return (
     <div className="container my-4">
@@ -323,6 +322,8 @@ const CourseDetails = () => {
                       <button
                         type="submit"
                         className="btn btn-sm  btn-info w-100 text-white"
+                        data-bs-toggle="collapse"
+                        href={`#editcourse`}
                       >
                         Edit Course
                       </button>
@@ -370,6 +371,8 @@ const CourseDetails = () => {
                     <button
                       type="submit"
                       className="btn btn-sm  btn-info w-100 text-white"
+                      data-bs-toggle="collapse"
+                      href="#addNote"
                     >
                       Add Note
                     </button>
