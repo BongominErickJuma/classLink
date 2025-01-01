@@ -40,7 +40,6 @@ const AnswerDetails = () => {
           headers: { "Content-Type": "application/json" },
         },
       });
-      window.location.reload();
     }
   };
 
@@ -75,7 +74,6 @@ const AnswerDetails = () => {
       });
     }
 
-    window.location.reload();
   };
 
   useEffect(() => {

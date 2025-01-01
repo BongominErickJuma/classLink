@@ -26,15 +26,6 @@ const Timetable = () => {
 
   const { data, error, loading } = useFetch(fetchUrl.url, fetchUrl.options);
 
-  useEffect(() => {
-    document.title = "Class Link | Timetable";
-    if (data) {
-      setTimeTable(data.schedules);
-      setCourses(data.courses);
-      groupByDay(data.schedules);
-    }
-  }, [data]);
-
   const openModal = (item, action) => {
     action === "add-subject"
       ? setAddingSchedule(item)
@@ -108,6 +99,14 @@ const Timetable = () => {
     setGroupedTimetable(grouped);
   };
 
+  useEffect(() => {
+    document.title = "Class Link | Timetable";
+    if (data) {
+      setTimeTable(data.schedules);
+      setCourses(data.courses);
+      groupByDay(data.schedules);
+    }
+  }, [data]);
   // Weekdays in the correct order
 
   return (

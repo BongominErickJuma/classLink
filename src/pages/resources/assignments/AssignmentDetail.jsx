@@ -36,8 +36,6 @@ const AssignmentDetail = () => {
         headers: { "Content-Type": "application/json" },
       },
     });
-
-    window.location.reload();
   };
 
   const handleEditChange = (e, id) => {
@@ -64,8 +62,6 @@ const AssignmentDetail = () => {
           headers: { "Content-Type": "application/json" },
         },
       });
-
-      window.location.reload();
     }
   };
   const handleAnswerChange = (e, id) => {
@@ -96,8 +92,6 @@ const AssignmentDetail = () => {
           headers: { "Content-Type": "application/json" },
         },
       });
-
-      window.location.reload();
     }
   };
 
@@ -110,8 +104,6 @@ const AssignmentDetail = () => {
         method: "DELETE",
       },
     });
-
-    window.location.reload();
   };
 
   useEffect(() => {
@@ -197,6 +189,8 @@ const AssignmentDetail = () => {
                   <button
                     type="submit"
                     className="btn btn-sm btn-info w-100 text-white"
+                    data-bs-toggle="collapse"
+                    href="#addQuestion"
                   >
                     Add Question
                   </button>
@@ -281,6 +275,8 @@ const AssignmentDetail = () => {
                           <button
                             type="submit"
                             className="btn btn-sm btn-info w-100 text-white"
+                            data-bs-toggle="collapse"
+                            href={`#editQuestion${assignment.id}`}
                           >
                             Edit Question
                           </button>
@@ -358,6 +354,8 @@ const AssignmentDetail = () => {
                           <button
                             type="submit"
                             className="btn btn-sm btn-danger w-100 text-white"
+                            data-bs-toggle="collapse"
+                            href={`#deleteQuestion${assignment.id}`}
                             onClick={(e) => {
                               handleDeleteQuestion(e, assignment.id);
                             }}
