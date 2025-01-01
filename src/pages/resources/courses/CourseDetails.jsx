@@ -40,6 +40,10 @@ const CourseDetails = () => {
         headers: { "Content-Type": "application/json" },
       },
     });
+
+    setTimeout(() => {
+      console.log(data);
+    }, 100);
   };
 
   const handleEditChange = (e) => {
@@ -87,7 +91,7 @@ const CourseDetails = () => {
       setTeacher(data.teacher);
       setTeachers(data.teachers);
     }
-  }, [data, addNote]);
+  }, [data, fetchUrl]);
 
   return (
     <div className="container my-4">

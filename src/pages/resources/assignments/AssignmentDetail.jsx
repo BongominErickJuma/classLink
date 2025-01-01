@@ -50,10 +50,15 @@ const AssignmentDetail = () => {
     e.preventDefault();
 
     // Ensure that the editQuestions object for this id is passed
-    const updatedQuestion = editQuestions[id];
+    // const updatedQuestion = editQuestions[id];
+
+    const updatedQuestion = {
+      question: editQuestions[id],
+      unitCode: unitCode,
+    };
 
     // Make sure to check if the question exists before proceeding
-    if (updatedQuestion) {
+    if (updatedQuestion.question) {
       setFetchUrl({
         url: `${import.meta.env.VITE_UPDATE_COURSE_ASSIGNMENT}/${id}`,
         options: {
@@ -99,7 +104,9 @@ const AssignmentDetail = () => {
     e.preventDefault();
     const assignmentId = [id];
     setFetchUrl({
-      url: `${import.meta.env.VITE_DELETE_COURSE_ASSIGNMENT}/${assignmentId}}`,
+      url: `${
+        import.meta.env.VITE_DELETE_COURSE_ASSIGNMENT
+      }/${assignmentId}/${unitCode}`,
       options: {
         method: "DELETE",
       },

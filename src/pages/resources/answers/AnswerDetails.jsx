@@ -30,8 +30,11 @@ const AnswerDetails = () => {
   const handleEditAnswer = (e, id) => {
     e.preventDefault();
 
-    const updatedAnswer = editAnswers[id];
-    if (updatedAnswer) {
+    const updatedAnswer = {
+      answer: editAnswers[id],
+      unitCode,
+    };
+    if (updatedAnswer.answer) {
       setFetchUrl({
         url: `${import.meta.env.VITE_UPDATE_ANSWER}/${id}`,
         options: {
@@ -73,7 +76,6 @@ const AnswerDetails = () => {
         },
       });
     }
-
   };
 
   useEffect(() => {
@@ -188,6 +190,8 @@ const AnswerDetails = () => {
                                   <button
                                     type="submit"
                                     className="btn btn-sm btn-info w-100 text-white"
+                                    data-bs-toggle="collapse"
+                                    href={`#editAnswer${ans.id}`}
                                   >
                                     Save Answer
                                   </button>
@@ -239,6 +243,8 @@ const AnswerDetails = () => {
                                   <button
                                     type="submit"
                                     className="btn btn-sm btn-info w-100 text-white"
+                                    data-bs-toggle="collapse"
+                                    href={`#mark${ans.id}`}
                                   >
                                     Mark
                                   </button>
