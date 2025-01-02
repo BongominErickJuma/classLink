@@ -61,6 +61,7 @@ const Login = () => {
         Class<span className="designed">Link.</span>
       </h2>
       <p>Password and name provided in the resume</p>
+      {loading && <p>Please wait, Render may take some time</p>}
       {error && (
         <div className="text-danger">
           <p>{error}</p>
