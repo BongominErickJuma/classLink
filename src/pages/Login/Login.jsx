@@ -60,7 +60,7 @@ const Login = () => {
       <h2>
         Class<span className="designed">Link.</span>
       </h2>
-      <p>Please Login</p>
+      <p>Password and name provided in the resume</p>
       {error && (
         <div className="text-danger">
           <p>{error}</p>
