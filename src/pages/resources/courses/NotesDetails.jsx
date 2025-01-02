@@ -31,7 +31,7 @@ const NotesDetails = () => {
     // Make sure to check if the question exists before proceeding
     if (editNote) {
       setFetchUrl({
-        url: `${import.meta.env.VITE_UPDATE_NOTE}/${noteId}`,
+        url: `${import.meta.env.VITE_UPDATE_NOTE}/${noteId}/${id}/${unitCode}`,
         options: {
           method: "PATCH",
           body: editNote, // Stringify the updated question
@@ -153,6 +153,8 @@ const NotesDetails = () => {
                     <button
                       type="submit"
                       className="btn btn-sm btn-info w-100 text-white"
+                      data-bs-toggle="collapse"
+                      href="#editNote"
                     >
                       Edit Note
                     </button>

@@ -40,10 +40,6 @@ const CourseDetails = () => {
         headers: { "Content-Type": "application/json" },
       },
     });
-
-    setTimeout(() => {
-      console.log(data);
-    }, 100);
   };
 
   const handleEditChange = (e) => {
